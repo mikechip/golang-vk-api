@@ -54,7 +54,7 @@ type BotsLongPollEvent struct {
 
 type BotsLongPollObject struct {
 	Message    BotlLongPollDM `json:"message"`
-	ClientInfo interface{}    `json:"client_info`
+	ClientInfo interface{}    `json:"client_info"`
 }
 
 type BotlLongPollDM struct {
@@ -68,6 +68,7 @@ type BotlLongPollDM struct {
 	Isimportant  bool                `json:"important"`
 	FwdMessages  []BotlLongPollDM    `json:"fwd_messages"`
 	ReplyMessage *BotlLongPollDM     `json:"reply_message"`
+	Payload      string              `json:"payload"`
 }
 
 func (client *VKClient) getLongPollServer() (LongPollServer, error) {
